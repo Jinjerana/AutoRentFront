@@ -1,4 +1,5 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, lazy, Suspense } from 'react';
 import { Layout } from './Layout';
@@ -13,15 +14,17 @@ import FavoritesPage from '../pages/FavoritesPage';
 
 export const App = () => {
   return (
-    <Suspense>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          {/* <Route path="*" element={<Navigate to="/" />} /> */}
-        </Routes>
-      </Layout>
-    </Suspense>
+    <Router>
+      <Suspense>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Layout>
+      </Suspense>
+    </Router>
   );
 };

@@ -27,7 +27,7 @@ export const App = () => {
       <Suspense>
         {/* <Layout> */}
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Welcome />}>
             <Route path="/AutoRentFront" element={<Welcome />} />
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />

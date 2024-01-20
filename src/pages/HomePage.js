@@ -1,8 +1,9 @@
-import { Welcome } from 'components/Welcome/WelcomeP';
+import { Welcome } from '../components/Welcome/WelcomeP';
 
 const HomePage = () => {
   return (
     <>
+      <p>HELLO</p>
       <Welcome />
     </>
   );
